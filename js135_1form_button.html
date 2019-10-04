@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>formulario y buttons</title>
+	<style type="text/css">
+		.formulario {
+			width: 250px;
+			border: 1px solid blue;
+			background-color: lightgrey;
+			margin:auto;
+			padding: 10px;
+			box-shadow: 5px solid blue;
+		}
+		label {
+			width: 10px;
+			display: inline-block;
+			line-height: 15px;
+		}
+
+		input {
+			width: 100px;
+
+		}
+		.input {
+			/* display: flex; */
+			margin:auto;
+			width: 80px;
+
+		}
+		.bordes {
+				border-radius: 10px;
+				box-shadow: 4px 3px 6px black;
+			}
+	</style>
+	<script type="text/javascript">
+		
+		function enviaFormulario () {
+			var i;
+			//devuelve un array de objetos
+			seleccionado=(document.formu.radio);
+			console.log(seleccionado);
+			for(i in seleccionado) {
+			  if (seleccionado[i].checked) {
+			  		alert(seleccionado[i].value);
+			  		document.write(seleccionado[i].value);
+			  		break;
+			  }
+			}
+		}
+	</script>
+</head>
+
+<body>
+	<main>
+		<form class="formulario bordes" name="formu" method="get" action="#" id="formu">
+			<label>1</label>
+			<input type="radio" name="radio" value="Radio1" checked>
+			<br>
+			<label>2</label>
+			<input type="radio" name="radio" value="Radio2">
+			<br>
+			<input type="button" name="envio" value="ENVIAR" onclick="enviaFormulario()">
+		</form>
+	</main>
+</body>
+</html>
